@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Ecosistemas
+{% endblock %}
+
+{% block body %}
+
+    <div class="">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Ecosistema</th>
+                    <th scope="col">Provincia</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for parque in arrayEco %}
+                <tr class="text-center m-2">
+                    <td><a href={{ path('show_info', {park:parque.nombre} ) }}>{{parque.nombre}}</a></td>
+                    <td>{{parque.ecosistema}}</td>
+                    <td>{{parque.provincia}}</td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

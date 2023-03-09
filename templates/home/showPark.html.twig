@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+Parque
+{% endblock %}
+
+{% block body %}
+{% for parque in arrayParques %}
+    {% if parque.nombre == nombreParque %}
+
+    <div class="container ">
+        <div class="card park-container">
+        <div class="row">
+            <div class="col-12 ">
+            <h1 class="titulo">{{parque.nombre}}</h1>
+            </div>
+            <div class="col-12 text-center ">
+                <h3 class="card-text">Provincia:</h3>
+                <a>{{parque.provincia}}</a>         
+                 <h3 class="card-text">Ecosistema:</h3>
+                <a>{{parque.ecosistema}}</a>
+            </div>
+            <div clas="row ">
+            <div class="col-12 d-flex justify-content-center" >
+                <button {{stimulus_controller('parques')}}  class="btn btn-primary mb-2" id="btn-add">Ocultar Imaxen</button>
+            </div>
+            </div>
+            <div clas="row">
+            <div class="col-12 d-flex justify-content-center" >
+                <img  id="imagen" class="img-fluid" src="/imaxes/{{parque.fichero}}"  />
+            </div>
+
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <a class="btn btn-primary mb-2 text-white" href={{ path('home') }}>Volver</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+@import '~bootstrap';
+td{
+    text-align: center;
+    padding-left: 20px;
+}
+.titulo{
+text-align: center;
+background-color: lightskyblue;
+margin: auto;
+height: 100px;
+
+}
+table,th, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td:nth-child(odd),th:nth-child(odd){
+    background-color: lightgray;
+
+}
+td:nth-child(even),th:nth-child(even){
+    background-color: lightsteelblue;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    padding: 20px;
+}
